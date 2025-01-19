@@ -17,6 +17,19 @@
     "test": "jest",
     "inspector": "npx @modelcontextprotocol/inspector build/index.js"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tatn/mcp-server-diff-typescript.git"
+  },
+  "keywords": [
+    "mcp",
+    "server",
+    "diff",
+    "unified"
+  ],
+  "homepage": "https://github.com/tatn/mcp-server-diff-typescript",
+  "license": "MIT",
+  "author": "tatn",
   "dependencies": {
     "@modelcontextprotocol/sdk": "0.6.0",
     "diff": "^7.0.0"
@@ -28,5 +41,6 @@
     "jest": "^29.7.0",
     "ts-jest": "^29.2.5",
     "typescript": "^5.3.3"
-  }
+  },
+  "types": "./build/index.d.ts"
 }

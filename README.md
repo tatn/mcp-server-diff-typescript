@@ -28,6 +28,12 @@ To use with Claude Desktop, add the server config:
 On MacOS: `~/Library/Application Support/Claude/claude_desktop_config.json`
 On Windows: `%APPDATA%/Claude/claude_desktop_config.json`
 
+```bash
+git clone https://github.com/tatn/mcp-server-diff-typescript.git
+cd mcp-server-diff-typescript
+npm install
+```
+
 ```json
 "mcpServers": {
   "mcp-server-diff-typescript": {
@@ -39,24 +45,8 @@ On Windows: `%APPDATA%/Claude/claude_desktop_config.json`
 }
 ```
 
-```json
-"mcpServers": {
-  "mcp-server-diff-typescript": {
-    "command": "npx",
-    "args": [
-      "-y",
-      "mcp-server-diff-typescript"
-    ]
-  }
-}
-```
-
 ### Debugging
 
 ```bash
 npx @modelcontextprotocol/inspector node /path/to/mcp-server-diff-typescript/build/index.js
-```
-
-```bash
-npx @modelcontextprotocol/inspector npx -y mcp-server-diff-typescript
 ```

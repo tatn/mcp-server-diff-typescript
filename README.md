@@ -1,46 +1,19 @@
 # mcp-server-diff-typescript MCP Server
 
-A Model Context Protocol server
+A Model Context Protocol server that provides unified diff generation capabilities.
 
-This is a TypeScript-based MCP server that implements a simple notes system. It demonstrates core MCP concepts by providing:
-
-- Resources representing text notes with URIs and metadata
-- Tools for creating new notes
-- Prompts for generating summaries of notes
+This TypeScript-based MCP server implements a diff generation system. It provides a tool to generate unified diffs between two text strings, which is useful for comparing and analyzing text differences.
 
 ## Features
 
-### Resources
-- List and access notes via `note://` URIs
-- Each note has a title, content and metadata
-- Plain text mime type for simple content access
-
 ### Tools
-- `create_note` - Create new text notes
-  - Takes title and content as required parameters
-  - Stores note in server state
 
-### Prompts
-- `summarize_notes` - Generate a summary of all stored notes
-  - Includes all note contents as embedded resources
-  - Returns structured prompt for LLM summarization
+- `get-unified-diff` - Generate unified diff between two text strings
+  - Takes `oldString` and `newString` as required parameters
+  - Returns the difference in unified diff format
+  - Uses the `diff` package for accurate difference detection
+  - Includes 3 lines of context around changes
 
-## Development
-
-Install dependencies:
-```bash
-npm install
-```
-
-Build the server:
-```bash
-npm run build
-```
-
-For development with auto-rebuild:
-```bash
-npm run watch
-```
 
 ## Installation
 
@@ -50,21 +23,34 @@ On MacOS: `~/Library/Application Support/Claude/claude_desktop_config.json`
 On Windows: `%APPDATA%/Claude/claude_desktop_config.json`
 
 ```json
-{
-  "mcpServers": {
-    "mcp-server-diff-typescript": {
-      "command": "/path/to/mcp-server-diff-typescript/build/index.js"
-    }
+"mcpServers": {
+  "mcp-server-diff-typescript": {
+    "command": "node",
+    "args": [
+      "/path/to/mcp-server-diff-typescript/build/index.js"
+    ]
+  }
+}
+```
+
+```json
+"mcpServers": {
+  "mcp-server-diff-typescript": {
+    "command": "npx",
+    "args": [
+      "-y",
+      "mcp-server-diff-typescript"
+    ]
   }
 }
 ```
 
 ### Debugging
 
-Since MCP servers communicate over stdio, debugging can be challenging. We recommend using the [MCP Inspector](https://github.com/modelcontextprotocol/inspector), which is available as a package script:
-
 ```bash
-npm run inspector
+npx @modelcontextprotocol/inspector node /path/to/mcp-server-diff-typescript/build/index.js
 ```
 
-The Inspector will provide a URL to access debugging tools in your browser.
+```bash
+npx @modelcontextprotocol/inspector npx -y mcp-server-diff-typescript
+```

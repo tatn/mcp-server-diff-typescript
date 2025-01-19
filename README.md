@@ -17,6 +17,12 @@ This TypeScript-based MCP server implements a diff generation system. It provide
 
 ## Installation
 
+```bash
+npm install mcp-server-diff-typescript
+```
+
+### Using with Claude Desktop
+
 To use with Claude Desktop, add the server config:
 
 On MacOS: `~/Library/Application Support/Claude/claude_desktop_config.json`

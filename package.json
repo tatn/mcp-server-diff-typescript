@@ -1,8 +1,8 @@
 {
   "name": "mcp-server-diff-typescript",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "A Model Context Protocol server that provides unified diff generation capabilities",
-  "private": true,
+  "main": "./build/index.js",
   "type": "module",
   "bin": {
     "mcp-server-diff-typescript": "./build/index.js"

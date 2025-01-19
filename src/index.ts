@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 /**
  * MCP server that returns the difference between strings in Unified Diff format.
  */

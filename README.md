@@ -14,24 +14,49 @@ This TypeScript-based MCP server implements a diff generation system. It provide
   - Uses the `diff` package for accurate difference detection
   - Includes 3 lines of context around changes
 
-
 ## Installation
+
+### As a Global Package
+
+```bash
+npm install -g mcp-server-diff-typescript
+```
+
+### As a Project Dependency
 
 ```bash
 npm install mcp-server-diff-typescript
 ```
 
+## Usage
+
 ### Using with Claude Desktop
 
 To use with Claude Desktop, add the server config:
 
-On MacOS: `~/Library/Application Support/Claude/claude_desktop_config.json`
+On MacOS: `~/Library/Application Support/Claude/claude_desktop_config.json`  
 On Windows: `%APPDATA%/Claude/claude_desktop_config.json`
+
+
+```json
+"mcpServers": {
+  "mcp-server-diff-typescript": {
+    "command": "npx",
+    "args": [
+      "-y",
+      "mcp-server-diff-typescript"
+    ]
+  }
+}
+```
+
+or Add the following configuration:
 
 ```bash
 git clone https://github.com/tatn/mcp-server-diff-typescript.git
 cd mcp-server-diff-typescript
 npm install
+npm run build
 ```
 
 ```json
@@ -46,6 +71,13 @@ npm install
 ```
 
 ### Debugging
+
+To debug the MCP server:
+
+```bash
+npx @modelcontextprotocol/inspector npx -y mcp-server-diff-typescript
+```
+
 
 ```bash
 npx @modelcontextprotocol/inspector node /path/to/mcp-server-diff-typescript/build/index.js

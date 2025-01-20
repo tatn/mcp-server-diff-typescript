@@ -4,6 +4,8 @@ A Model Context Protocol server that provides unified diff generation capabiliti
 
 This TypeScript-based MCP server implements a diff generation system. It provides a tool to generate unified diffs between two text strings, which is useful for comparing and analyzing text differences.
 
+<a href="https://glama.ai/mcp/servers/3sbmp65pce"><img width="380" height="200" src="https://glama.ai/mcp/servers/3sbmp65pce/badge" alt="Server Diff TypeScript MCP server" /></a>
+
 ## Features
 
 ### Tools

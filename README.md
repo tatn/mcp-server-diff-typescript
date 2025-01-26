@@ -1,4 +1,5 @@
 # mcp-server-diff-typescript MCP Server
+[![smithery badge](https://smithery.ai/badge/@tatn/mcp-server-diff-typescript)](https://smithery.ai/server/@tatn/mcp-server-diff-typescript)
 
 A Model Context Protocol server that provides unified diff generation capabilities.
 
@@ -17,6 +18,14 @@ This TypeScript-based MCP server implements a diff generation system. It provide
   - Includes 3 lines of context around changes
 
 ## Installation
+
+### Installing via Smithery
+
+To install Diff Generation Server for Claude Desktop automatically via [Smithery](https://smithery.ai/server/@tatn/mcp-server-diff-typescript):
+
+```bash
+npx -y @smithery/cli install @tatn/mcp-server-diff-typescript --client claude
+```
 
 ### As a Global Package
 
